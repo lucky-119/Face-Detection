@@ -71,16 +71,13 @@ with open('subjects.txt', 'r') as filehandle:
 
 faces, labels = prepare_training_data("training-data")
 print("Data prepared")
- 
-print("Total faces: ", len(faces))
-print("Total labels: ", len(labels))
 
 face_recognizer.train(faces, np.array(labels))
 
 cam = cv2.VideoCapture(0)
 detector=cv2.CascadeClassifier('opencv-files/lbpcascade_frontalface.xml')
 
-print("Predicting images...")
+print("Face recognition active!")
 while True:
     ret, img = cam.read()
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
