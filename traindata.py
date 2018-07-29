@@ -32,5 +32,7 @@ subjects.append(Name);
 with open('subjects.txt', 'w') as filehandle:  
     for listitem in subjects:
         filehandle.write('%s\n' % listitem)
+
+print('Initialization done! Close Window!')
 cam.release()
 cv2.destroyAllWindows()
